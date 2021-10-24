@@ -16,6 +16,8 @@
         <activity
             android:name=".Grid"/>
         <activity
+            android:name=".MyList"/>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

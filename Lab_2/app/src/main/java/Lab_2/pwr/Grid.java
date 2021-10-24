@@ -30,8 +30,8 @@ public class Grid extends AppCompatActivity {
 
         Toast.makeText(getApplicationContext(), arg1 + arg2, Toast.LENGTH_SHORT).show();
 
-        Spinner spinner = (Spinner)findViewById(R.id.spinner);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        Spinner spin = (Spinner)findViewById(R.id.spinner);
+        spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getApplicationContext(), "Selected: " + p[position], Toast.LENGTH_SHORT).show();
@@ -46,6 +46,6 @@ public class Grid extends AppCompatActivity {
         ArrayAdapter<String> adptr = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item);
         adptr.addAll(list);
         adptr.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adptr);
+        spin.setAdapter(adptr);
     }
 }

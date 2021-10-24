@@ -3,10 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Codes/MAAP/Lab_2/app/src/main/res/layout/MyList.xml" value="0.36666666666666664" />
         <entry key="..\:/Codes/MAAP/Lab_2/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Codes/MAAP/Lab_2/app/src/main/res/layout/activity_main2.xml" value="0.35260416666666666" />
         <entry key="..\:/Codes/MAAP/Lab_2/app/src/main/res/layout/activity_main3.xml" value="0.36666666666666664" />
         <entry key="..\:/Codes/MAAP/Lab_2/app/src/main/res/layout/grid.xml" value="0.2171875" />
+        <entry key="..\:/Codes/MAAP/Lab_2/app/src/main/res/layout/list_row.xml" value="0.2765625" />
+        <entry key="..\:/Codes/MAAP/Lab_2/app/src/main/res/layout/simple_list.xml" value="0.2765625" />
       </map>
     </option>
   </component>

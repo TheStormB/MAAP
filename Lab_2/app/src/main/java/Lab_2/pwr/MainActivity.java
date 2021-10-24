@@ -37,6 +37,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void MyList(View view){
+        Intent intent = new Intent();
+        intent.setClass(this, MyList.class);
+        startActivity(intent);
+    }
+
 
 //    @Override
 //    protected  void onActivityresult(int requestCode, int resultCode, @Nullable Intent data){

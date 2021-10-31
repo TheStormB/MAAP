@@ -43,6 +43,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void ContactList(View view){
+        Intent intent = new Intent();
+        intent.setClass(this, ContactList.class);
+        startActivity(intent);
+    }
+
+
+
 
 //    @Override
 //    protected  void onActivityresult(int requestCode, int resultCode, @Nullable Intent data){

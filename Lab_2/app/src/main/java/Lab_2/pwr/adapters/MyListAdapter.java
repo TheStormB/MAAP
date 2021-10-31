@@ -64,7 +64,7 @@ public class MyListAdapter extends BaseAdapter {
         }
 
         item.tv1.setText(title[position]);
-        item.tv2.setText(title[position]);
+        item.tv2.setText(subtitle[position]);
         item.cBox.setChecked(checked[position]);
 
         item.cBox.setOnClickListener(new View.OnClickListener(){

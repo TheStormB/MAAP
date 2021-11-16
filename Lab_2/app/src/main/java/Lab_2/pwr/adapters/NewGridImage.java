@@ -45,6 +45,7 @@ public class NewGridImage extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ImageView mV;
+        ImageView web;
 
 
         if(convertView == null){
@@ -64,9 +65,15 @@ public class NewGridImage extends BaseAdapter {
         mV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ctx.getApplicationContext(), "Item Selected", Toast.LENGTH_SHORT).show();
+                int num = position + 1;
+                Toast.makeText(ctx.getApplicationContext(), "Item Selected" + num, Toast.LENGTH_SHORT).show();
             }
         });
+
+
+
+
+
 
 
 

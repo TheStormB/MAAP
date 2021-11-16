@@ -5,9 +5,11 @@
       <map>
         <entry key="..\:/Codes/MAAP/Lab_3/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3828125" />
         <entry key="..\:/Codes/MAAP/Lab_3/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Codes/MAAP/Lab_3/app/src/main/res/layout/activity_part2.xml" value="0.22" />
         <entry key="..\:/Codes/MAAP/Lab_3/app/src/main/res/layout/activity_xml.xml" value="0.35260416666666666" />
         <entry key="..\:/Codes/MAAP/Lab_3/app/src/main/res/layout/activity_xml_menu.xml" value="0.1408514492753623" />
         <entry key="..\:/Codes/MAAP/Lab_3/app/src/main/res/menu/my_menu.xml" value="0.1" />
+        <entry key="..\:/Codes/MAAP/Lab_3/app/src/main/res/menu/navigation.xml" value="0.25" />
       </map>
     </option>
   </component>

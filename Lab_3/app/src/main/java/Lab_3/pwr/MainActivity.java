@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
@@ -88,18 +89,44 @@ public class MainActivity extends AppCompatActivity {
         registerForContextMenu(findViewById(R.id.sponge));
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.myBottomNavigation);
+        bottomNavigationView.setOnNavigationItemReselectedListener(
+                new BottomNavigationView.OnNavigationItemReselectedListener(){
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item){
+                        switch(item.getItemId()){
+
+                        }
+                        return true;
+                    }
+                }
+        );
+
+
+
+
+
+        Button button = (Button) findViewById(R.id.my_button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Part_2.class));
+            }
+        });
+
     }
 
-//FIX THE PROBLEM           "BOTTOM NAVIGATION"
-//    BottomNavigationView setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemReselectedListener){
-//        @Override
-//                public boolean onNavigationItemSelected(@NonNull MenuItem item){
-//            switch(item.getItemId()){
-//
-//            }
-//            return true;
-//        }
-//    };
+    BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.myBottomNavigation);
+
+
+
+
+//    Home firstFragment = new Home();
+//    Park secondFragment = new Park();
+//    Plane thirdFragment = new Plane();
+
+
+
+
 
     public void openActionMode(View view){
         startActionMode(new ActionMode.Callback() {
@@ -131,7 +158,4 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-
-
 }

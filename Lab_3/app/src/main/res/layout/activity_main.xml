@@ -53,21 +53,11 @@
         android:id="@+id/myBottomNavigation"
         android:layout_width="409dp"
         android:layout_height="134dp"
+        android:background="?android:attr/windowBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sponge"
-        app:menu="@menu/navigation"
-        android:background="?android:attr/windowBackground"/>
-
-    <Button
-        android:id="@+id/my_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Part II"
-        app:layout_constraintBottom_toBottomOf="@+id/sponge"
-        app:layout_constraintEnd_toStartOf="@+id/pear"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:menu="@menu/navigation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

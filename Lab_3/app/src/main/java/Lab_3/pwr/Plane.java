@@ -13,6 +13,6 @@ public class Plane extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.activity_part2, container, false);
+        return inflater.inflate(R.layout.part_2_3, container, false);
     }
 }

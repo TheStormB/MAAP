@@ -15,16 +15,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
+
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemReselectedListener{
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
-        menu.add("1.Item");
-        menu.add("2.Item");
-        menu.add(0,1,Menu.NONE,"3.Item");
-        MenuItem check_menu = menu.add(0,2,Menu.NONE,"4.Item");
+        menu.add(0,1,Menu.NONE,"1.Item");
+        menu.add(0,2,Menu.NONE,"2.Item");
+        menu.add(0,3,Menu.NONE,"3.Item");
+        MenuItem check_menu = menu.add(0,4,Menu.NONE,"4.Item");
         check_menu.setCheckable(true);
 
         SubMenu subMenu = menu.addSubMenu(0, 3, Menu.NONE,"MySub");
@@ -38,9 +41,12 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
             case 1:
+                startActivity(new Intent(getApplicationContext(), Part_2.class));
+                return true;
+            case 3:
                 startActivity(new Intent(getApplicationContext(), XML_Menu.class));
                 return true;
-            case 2:
+            case 4:
                 if(item.isChecked())
                     item.setChecked(false);
                 else
@@ -78,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
+    BottomNavigationView bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,45 +94,55 @@ public class MainActivity extends AppCompatActivity {
         registerForContextMenu(findViewById(R.id.pear));
         registerForContextMenu(findViewById(R.id.sponge));
 
+        bottomNavigationView = (BottomNavigationView) findViewById(R.id.myBottomNavigation);
+        bottomNavigationView.bringToFront();
+
+//        bottomNavigationView.setOnNavigationItemSelectedListener((BottomNavigationView.OnNavigationItemSelectedListener) this);
+        bottomNavigationView.setSelectedItemId(R.id.home);
+
+
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.myBottomNavigation);
         bottomNavigationView.setOnNavigationItemReselectedListener(
                 new BottomNavigationView.OnNavigationItemReselectedListener(){
                     @Override
-                    public boolean onNavigationItemSelected(@NonNull MenuItem item){
+                    public void onNavigationItemReselected(@NonNull MenuItem item) {
                         switch(item.getItemId()){
-
+                            case R.id.home:
+                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            case R.id.park:
+                                startActivity(new Intent(getApplicationContext(), Part_2_2.class));
+                            case R.id.plane:
+                                startActivity(new Intent(getApplicationContext(), Part_2_3.class));
                         }
-                        return true;
                     }
                 }
         );
 
-
-
-
-
-        Button button = (Button) findViewById(R.id.my_button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Part_2.class));
-            }
-        });
-
     }
-
-    BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.myBottomNavigation);
-
-
-
-
 //    Home firstFragment = new Home();
-//    Park secondFragment = new Park();
-//    Plane thirdFragment = new Plane();
+//    Plane secondFragment = new Plane();
+//    Park thirdFragment = new Park();
 
-
-
-
+//private BottomNavigationView.OnNavigationItemReselectedListener navListener =
+//        new BottomNavigationView.OnNavigationItemReselectedListener();
+//    @Override
+//    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+//
+//        switch (item.getItemId()) {
+//            case R.id.plane:
+//                getSupportFragmentManager().beginTransaction().replace(R.id.container, firstFragment).commit();
+//                return true;
+//
+//            case R.id.home:
+//                getSupportFragmentManager().beginTransaction().replace(R.id.container, secondFragment).commit();
+//                return true;
+//
+//            case R.id.park:
+//                getSupportFragmentManager().beginTransaction().replace(R.id.container, thirdFragment).commit();
+//                return true;
+//        }
+//        return false;
+//    }
 
     public void openActionMode(View view){
         startActionMode(new ActionMode.Callback() {
@@ -157,5 +173,10 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public void onNavigationItemReselected(@NonNull MenuItem item) {
+
     }
 }

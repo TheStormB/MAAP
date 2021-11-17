@@ -13,6 +13,12 @@
             android:name=".Part_2"
             android:exported="false" />
         <activity
+            android:name=".Part_2_2"
+            android:exported="false" />
+        <activity
+            android:name=".Part_2_3"
+            android:exported="false" />
+        <activity
             android:name=".XML_Menu"
             android:exported="true" />
         <activity

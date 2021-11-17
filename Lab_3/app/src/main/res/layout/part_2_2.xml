@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Part_2">
+    tools:context=".Part_2_2">
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -15,8 +15,8 @@
         android:background="?android:attr/windowBackground"/>
 
     <ImageView
-        android:id="@+id/kungfupanda"
+        android:id="@+id/sponge2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/kungfu" />
+        app:srcCompat="@drawable/sponge" />
 </RelativeLayout>

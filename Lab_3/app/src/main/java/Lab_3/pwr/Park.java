@@ -13,6 +13,6 @@ public class Park extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.activity_xml_menu, container, false);
+        return inflater.inflate(R.layout.part_2_2, container, true);
     }
 }

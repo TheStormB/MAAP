@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 //        bottomNavigationView.setOnNavigationItemSelectedListener((BottomNavigationView.OnNavigationItemSelectedListener) this);
         bottomNavigationView.setSelectedItemId(R.id.home);
 
-
+        //try with setOnItemSelectedListener() to fix the problem.
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.myBottomNavigation);
         bottomNavigationView.setOnNavigationItemReselectedListener(
                 new BottomNavigationView.OnNavigationItemReselectedListener(){

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Lab_4</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="radiobutton3">RadioButton3</string>
+    <string name="radiobutton2">RadioButton2</string>
+    <string name="radiobutton1">RadioButton1</string>
+    <string name="title_activity_my_tabbed">MyTabbed</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+</resources>

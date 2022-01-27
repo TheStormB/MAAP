@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     AtomicBoolean currentlyPlaying = new AtomicBoolean(false);
     Thread audio = null;
     Thread storage = null;
-    Thread play = null;
+    MediaRecorder mr=new MediaRecorder();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -219,37 +219,38 @@ public class MainActivity extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void playRecord(){
-        ((TextView) findViewById(R.id.Current_State)).setText(("Playing..."));
-        ((Button) findViewById(R.id.button3)).setText(("Play"));
+        ((TextView) findViewById(R.id.Current_State)).setText(("Recording..."));
+        ((Button) findViewById(R.id.button3)).setText(("Start"));
 
-        play = new Thread(()->{
-//            mediaPlayer = new MediaPlayer();
-//            mediaPlayer.setDataSource(filePath);
-//            mediaPlayer.start();
-            MediaPlayer mediaPlayer = new MediaPlayer();
-            String dirPath = getApplicationContext().getFilesDir().toString();
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO}, 0);
+        }else {
+
+            mr.setAudioSource(MediaRecorder.AudioSource.MIC);
+            mr.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
+            mr.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+            String dirPath=getApplicationContext().getFilesDir().toString();
+            mr.setOutputFile(dirPath+"/Record.mp4");
             try {
-
-                mediaPlayer.setDataSource(dirPath);
-//                Toast.makeText(getApplicationContext(), "text", Toast.LENGTH_SHORT).show();
-                mediaPlayer.setDataSource(dirPath+"/recording0.wav");
-                ///data/user/0/com.example.myapplication/files
-                mediaPlayer.prepare();
-                mediaPlayer.start();
-
+                mr.prepare();
+                mr.start();
+                System.out.println("Recording On");
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
-
-
-
-        });
+        }
 
     }
 
     public void stopPlay(){
         ((TextView) findViewById(R.id.Current_State)).setText(("Would you like to record ?"));
-        ((Button) findViewById(R.id.button4)).setText(("Pause"));
+        ((Button) findViewById(R.id.button4)).setText(("Stop"));
+        if(currentlyPlaying.get()) {
+            mr.reset();
+            mr.release();
+            mr.stop();
+            mr = null;
+        }
     }
 }

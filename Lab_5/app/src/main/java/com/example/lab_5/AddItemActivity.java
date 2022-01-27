@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,10 +19,11 @@ public class AddItemActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent();
-                i.putExtra("mainText", ((TextView)findViewById(R.id.textView2)).getText().toString());
-                i.putExtra("secText", ((TextView) findViewById(R.id.textView3)).getText().toString());
-                i.putExtra("age", Integer.parseInt((((TextView) findViewById(R.id.textView4)).getText().toString())));
-                i.putExtra("rating", Integer.parseInt((((TextView)findViewById(R.id.textView4)).getText().toString())));
+                i.putExtra("ID", ((EditText)findViewById(R.id.inputfield)).getText().toString());
+                i.putExtra("Name", ((EditText)findViewById(R.id.namefield)).getText().toString());
+                i.putExtra("SurName", ((EditText) findViewById(R.id.surnamefield)).getText().toString());
+                i.putExtra("age", Integer.parseInt((((EditText) findViewById(R.id.agefield)).getText().toString())));
+//                i.putExtra("rating", Integer.parseInt((((RatingBar)findViewById(R.id.ratingBar));
 
 
                 setResult(Activity.RESULT_OK, i);
@@ -34,6 +35,7 @@ public class AddItemActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 setResult(Activity.RESULT_CANCELED);
+                finish();
             }
         });
     }

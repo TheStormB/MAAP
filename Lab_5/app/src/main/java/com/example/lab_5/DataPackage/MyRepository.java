@@ -14,7 +14,11 @@ public class MyRepository {
         myDao = db.myDao();
 
     }
-    public  List<ItemData> getDataList() { return myDao.getAllData(); }
+    public List<ItemData> getDataList() {
+        return myDao.getAllData();
+//        dataList = myDao.getAllData();
+//        return dataList;
+    }
     public void insertItem(ItemData item) { myDao.insert(item); }
     public void deleteItem(ItemData item) {
         myDao.delete(item);

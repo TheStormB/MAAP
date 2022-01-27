@@ -10,6 +10,7 @@ import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.ListFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 
 import com.example.lab_5.DataPackage.InteractionListener;
@@ -26,11 +27,12 @@ public class MainActivity extends AppCompatActivity implements InteractionListen
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
     private MyRepository repo;
+    ListFragment myListFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main);
+
 
         repo = new MyRepository(this.getApplication());
 
@@ -51,13 +53,15 @@ public class MainActivity extends AppCompatActivity implements InteractionListen
                             Intent data = result.getData();
 
                             ItemData d = new ItemData();
-                            d.txtMain = data.getStringExtra("mainText");
-                            d.txtSecond = data.getStringExtra("secText");
+                            d.txtMain = data.getStringExtra("Name");
+                            d.txtSecond = data.getStringExtra("SurName");
                             d.age = data.getIntExtra("age", -1);
-                            d.rating = data.getIntExtra("rating", -1);
+                            System.out.println("-----------------"+d.txtMain);
+                            System.out.println("-----------------"+d.txtSecond);
+
 
                             repo.insertItem(d);
-
+//                            myListFragment.setList(getRepositoryList());
                             f.setData(repo.getDataList());
                         }
                     }

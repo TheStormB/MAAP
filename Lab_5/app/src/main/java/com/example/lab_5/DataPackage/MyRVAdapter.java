@@ -69,7 +69,7 @@ public class MyRVAdapter extends RecyclerView.Adapter<MyRVAdapter.ViewHolder> {
             mMainText = binding.itemTxtMain;
             mTextTwo = binding.itemTxt2;
             mAvatar = binding.avatarImage;
-            mRating = binding.itemRatingImage;
+            mRating = binding.rating;
         }
 
         @Override

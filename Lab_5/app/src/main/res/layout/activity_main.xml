@@ -7,42 +7,40 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:theme="@style/Test"
         app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:theme="@style/Test">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.StorageApp.PopupOverlay" />
+        app:layout_constraintTop_toTopOf="parent">
 
 
     </com.google.android.material.appbar.AppBarLayout>
 
+
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="JHOHOHO" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="JHOHOHO"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.434"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fragment_content_main"
+        app:layout_constraintVertical_bias="0.812" />
 
     <fragment
         android:id="@+id/fragment_content_main"
         android:name="com.example.lab_5.DataPackage.ItemFragment"
         android:layout_width="match_parent"
-        android:layout_height="495dp"
-        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        app:defaultNavHost="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.025"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_content_main"
         />
-
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -55,5 +53,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_dialog_email"
         />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_content_main"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        app:layout_constraintVertical_bias="0.0"
+        app:popupTheme="@style/Theme.StorageApp.PopupOverlay" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

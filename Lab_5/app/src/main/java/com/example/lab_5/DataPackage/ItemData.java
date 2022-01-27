@@ -18,7 +18,7 @@ public class ItemData {
         public int rating;
         @ColumnInfo(name = "age")
         public int age;
-        @ColumnInfo(name = "sex")
-        public boolean gender;
+//        @ColumnInfo(name = "sex")
+//        public boolean gender;
 }
 

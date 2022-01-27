@@ -39,7 +39,7 @@ public class ItemFragment extends Fragment {
     @Override
     public void onAttach(Context ctx){
         super.onAttach(ctx);
-        if(ctx instanceof InteractionListener){
+        if((ctx instanceof InteractionListener)){
             listener = (InteractionListener) ctx;
         }else{
             throw new IllegalArgumentException("Interaction can't listener!");
@@ -48,6 +48,15 @@ public class ItemFragment extends Fragment {
 
     public void setData(List<ItemData> data){
         RVview.setData(data);
+    }
+
+
+    public static ItemFragment newInstance(int mColumnCount){
+        ItemFragment fragment = new ItemFragment();
+        Bundle args = new Bundle();
+        args.putInt(ARG_COLUMN_COUNT, mColumnCount);
+        fragment.setArguments(args);
+        return fragment;
     }
 
 

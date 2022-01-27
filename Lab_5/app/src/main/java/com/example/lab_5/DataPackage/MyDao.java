@@ -12,7 +12,7 @@ import java.util.List;
 public interface MyDao {
     @Query("SELECT * FROM item_table ORDER BY id ASC")
     List<ItemData> getAllData();
-    @Query("SELECT * FROM item_table ORDER BY rating ASC")
+    @Query("SELECT * FROM item_table ORDER BY rating desc")
     List<ItemData> getAllSortedByRatingData();
     @Query("DELETE FROM item_table")
     void deleteAll();

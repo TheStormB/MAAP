@@ -25,9 +25,5 @@ public class NewGrid extends AppCompatActivity {
         setContentView(R.layout.new_grid);
         GridView view = (GridView)findViewById(R.id.New_Grid_View);
         view.setAdapter(new NewGridImage(this));
-
-
     }
-
-
 }

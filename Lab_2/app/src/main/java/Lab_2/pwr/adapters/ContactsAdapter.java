@@ -19,6 +19,7 @@ import androidx.annotation.RequiresApi;
 
 import java.util.Random;
 
+
 import Lab_2.pwr.ContactList;
 import Lab_2.pwr.Grid;
 import Lab_2.pwr.MyList;

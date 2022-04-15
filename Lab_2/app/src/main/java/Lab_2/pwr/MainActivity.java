@@ -36,13 +36,11 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("ARG2", 2);
         startActivity(intent);
     }
-
     public void MyList(View view){
         Intent intent = new Intent();
         intent.setClass(this, MyList.class);
         startActivity(intent);
     }
-
     public void ContactList(View view){
         Intent intent = new Intent();
         intent.setClass(this, ContactList.class);

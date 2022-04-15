@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Lab_1</string>
+    <string name="button">Welcome to my app</string>
+    <string name="button2">Move to Page 2</string>
+    <string name="button3">Move to Page 3</string>
+    <string name="button4">Move to Page 4</string>
+</resources>
